@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Taylor Swift — The Eras Archive</title>
+<title>THE TS ARCHIVE</title>
 <style>
 :root{--bg:#08080e;--fg:#fff;--muted:#aaa7b8}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,sans-serif}
@@ -59,9 +59,9 @@ const tags=["all",...new Set(albums.flatMap(a=>a[5]))];
 document.getElementById("filters").innerHTML=tags.map(x=>`<button class="${x==="all"?"active":""}" onclick="active='${x}';document.querySelectorAll('.filter button').forEach(b=>b.classList.remove('active'));this.classList.add('active');render()">${x.toUpperCase()}</button>`).join("");
 function render(){let q=document.getElementById("search").value.toLowerCase();let arr=albums.filter(a=>(active==="all"||a[5].includes(active))&&a[0].toLowerCase().includes(q));document.getElementById("grid").innerHTML=arr.map((a)=>`<article class="card" style="--c:${a[3]}" onclick="openM(${albums.indexOf(a)})"><div class="cover"><span class="year">${a[1]} • ${a[5].join(" / ")}</span><span class="era">${a[2]}</span></div><div class="cardbody"><h3>${a[0]}</h3><div class="meta">${a[4]} tracks • click for details</div><span class="badge">✦ EXPLORE ERA</span></div></article>`).join("");document.getElementById("count").textContent=albums.length}
 const ERA_SYMBOLS={
-"Taylor Swift":["🎸","🦋","🤠","🌽","💚"],
+"Taylor Swift":["🪕","🦋","🤠","🌽","💚"],
 "Fearless":["✨","👢","🏰","💛"],
-"Speak Now":["👗","✨","📝","🐉","💜"],
+"Speak Now":["👗","🎸","✨","📝","🐉","💜"],
 "Red":["🧣","🍂","🍁","☕","📻","💋","🚗","❤️"],
 "1989":["🏙️","🗽","🌊","🕊️","🚕","📸","🌟","👩🏼‍🎤","🩵"],
 "reputation":["🐍","📰","🔫","💰","🔪","🌃","🖤"],
@@ -110,6 +110,6 @@ render();
 </script>
   <footer class="site-footer">
     <div class="footer-main">Created by Piotr Latasiewicz &amp; ChatGPT</div>
-    <div class="footer-year">© 2026 · The Eras Archive</div>
+    <div class="footer-year">© 2026 · THE TS ARCHIVE</div>
   </footer>
 </body></html>
